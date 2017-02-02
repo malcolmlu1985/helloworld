@@ -14,6 +14,9 @@
           文件：<input type="file" name="roncooFile" />
        <input type="submit" value="上传" />
      </form>
+     
+     	<input type="text" name="email" id="email" />
+		<button id="send">发送邮件</button>
        
        <script>
            $(function(){
@@ -21,6 +24,22 @@
                     alert('点击了title');
                });
            })
+           
+           
+           	$(function(){
+			$('#send').click(function(){
+				var email = $('#email').val();
+				$.ajax({
+					url:'/api/mail',
+					type:'post',
+					data:{'email':email},
+					success:function(msg){
+						alert(msg);
+					}
+				});
+			});
+		})
+           
            </script>
        
        <p>

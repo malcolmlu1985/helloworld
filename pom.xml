@@ -65,6 +65,8 @@
 		</dependency>
 
         <!-- Redis -->
+          <!-- Redis除了做数据库，还能做session集群 -->
+        <!-- redis做缓存集群，ehcache更适合做本地缓存，而redis更适合做集群缓存，虽然ehcache也能集群，但redis更简单 -->
         <dependency>  
           <groupId>org.springframework.boot</groupId>  
           <artifactId>spring-boot-starter-redis</artifactId>  
@@ -86,19 +88,44 @@
        <dependency> 
              <groupId>net.sf.ehcache</groupId>
              <artifactId>ehcache</artifactId> 
-       </dependency>
+       </dependency>       
        
-       <!-- redis做缓存集群，ehcache更适合做本地缓存，而redis更适合做集群缓存，虽然ehcache也能集群，但redis更简单 -->
-       <dependency> 
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-redis</artifactId> 
-       </dependency>
-        
+       <!-- spring session,再配合redis来完成session集群,默认结合外置的redis来实现，并且redis的版本在2.8以上 -->
+<!-- 		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+		</dependency>
+         -->
         <!-- jms -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
+		
+		<!-- 调用REST服务,使用代理 -->
+		<dependency> 
+		     <groupId>org.apache.httpcomponents</groupId>
+		      <artifactId>httpclient</artifactId> 
+		</dependency>
+		
+		<!-- mail -->
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-mail</artifactId> 
+        </dependency>
+        
+        <!-- actuator -->
+		<dependency>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<!-- security -->
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency> 
+        
         
         <!-- test -->
 		<dependency>

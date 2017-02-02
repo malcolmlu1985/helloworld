@@ -24,6 +24,8 @@ import com.jizhela.helloworld.bean.User;
 @RequestMapping ( "/index" ) 
 public class IndexController {
 	
+
+	
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 	
 	//使用指定类初始化日志对象，在日志输出的时候，可以打印出日志信息所在类
@@ -98,4 +100,5 @@ public class IndexController {
 	       return "hello";
 
 	    }
+
 }
